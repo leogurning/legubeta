@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign Up</h1>
+        {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{# each messages }}
+            <p>{{ this }}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+        <form action="/user/signup" method="post">
+            <div class="form-group">
+                <label for="puserid">User ID</label>
+                <input type="text" id="puserid" name="puserid" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pusername">Username</label>
+                <input type="text" id="pusername" name="pusername" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="prole">Role</label>
+                <input type="text" id="prole" name="prole" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pdept">Dept</label>
+                <input type="text" id="pdept" name="pdept" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ppassword">Password</label>
+                <input type="password" id="ppassword" name="ppassword" class="form-control">
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}" />
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</div>
